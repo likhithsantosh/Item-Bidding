@@ -8,7 +8,7 @@ const userRoutes = require('./routes/user.js');
 
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = 3000;
 
 // Connect to the database
 connectDB();
@@ -30,10 +30,7 @@ app.use((err, req, res, next) => {
 });
 
 app.use('/api', apiRoutes);
-app.use('/api/users', userRoutes);
-app.use('/', (req, res) => {
-  res.send('Welcome to the BidPlus API');
-});
+app.use('/api/users', userRoutes); 
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
