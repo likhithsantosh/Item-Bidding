@@ -31,6 +31,9 @@ app.use((err, req, res, next) => {
 
 app.use('/api', apiRoutes);
 app.use('/api/users', userRoutes); 
+app.use('/',(req,res)=>{
+  res.send("server running");
+});
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
